@@ -29,7 +29,7 @@ from sklearn.svm import SVC
 
 #Read data, skip the first row and read header
 
-Raw_Data= pd.read_csv("C:/Users/s1883483/Desktop/selfstudy/Loan case study/Raw_Data/LoanStats_2017Q2.csv", skiprows=[0, 105456, 105455] , header=0)
+Raw_Data= pd.read_csv("LoanStats_2017Q2.csv", skiprows=[0, 105456, 105455] , header=0)
 
 # Replace null id with row index, from 0 to 105450
 
