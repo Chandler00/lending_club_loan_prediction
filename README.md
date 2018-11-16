@@ -81,6 +81,7 @@ memory usage: 116.7+ MB
     ax.set_xlabel("Loan Status")
     ax.set_ylabel("Count")
     fig.savefig('loan_status.png', dpi=1200)
+![alt text](https://user-images.githubusercontent.com/28764722/48594411-69e97b80-e91e-11e8-93e8-9dd4fa39a294.png)
 # 2. Feature Engineering
 ### There are in total 7 status(). To simplify this case, we only include two status, Fully Paid and  Default. Drop 'Current', and label late payments as default. (0 = not delaied cases, 1 = default) 
 
@@ -101,7 +102,7 @@ memory usage: 116.7+ MB
     ax.set_xlabel("Loan Status Fixed")
     ax.set_ylabel("Count")
     fig.savefig('loan_status_fixed.png', dpi=1200)
-
+![alt text](https://user-images.githubusercontent.com/28764722/48594536-f72cd000-e91e-11e8-8676-4585ebd23e38.png)
 ### Evaluate the relation between 'application_type' and 'loan_status_fixed'. We find out that, Joint application has only 10% higher default rate. Drop the 'application_type' after we have our joint accounts value fixed. Combine annual_inc, annual_inc_joint, dti, dti_joint, revol_bal, revol_bal_joint, application_type. Encapsulate account holder's income and dti information into annual_inc_fixed and dti_fixed 
 
     Raw_Data_Selected.groupby(['application_type', 'loan_status_fixed']).size()
@@ -157,6 +158,7 @@ memory usage: 116.7+ MB
     corr_map = sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True)
     figure = corr_map.get_figure()
     figure.savefig('C:/Users/s1883483/Desktop/selfstudy/Loan case study/Logistic_Regression/corr_conf.png', dpi=1000)
+![alt text](https://user-images.githubusercontent.com/28764722/48594590-27746e80-e91f-11e8-87ec-461114f24e5f.png)
 
 ## Insights from corr-matrix
 ###1. interest rate is highly negative related with grade. The higher grade means better credit which also means lower interest rate.
@@ -256,3 +258,4 @@ memory usage: 116.7+ MB
     svm.fit(X_train.as_matrix(['MORTGAGE', 'OWN', 'RENT', 'grade_fixed', 'revol_util', 'tot_cur_bal',  'emp_length_fixed' ]), y_train)
     test = svm.predict(X_test.as_matrix(['MORTGAGE', 'OWN', 'RENT', 'grade_fixed', 'revol_util', 'tot_cur_bal', 'emp_length_fixed' ]))
     Scores.loc[len(Scores)] = ['svm_all_valurable_combined', accuracy_score(y_test, test), f1_score(y_test, test), recall_score(y_test, test),  precision_score(y_test, test)]
+![alt text] (https://user-images.githubusercontent.com/28764722/48594617-43781000-e91f-11e8-8025-f7f45275f6ea.png)
