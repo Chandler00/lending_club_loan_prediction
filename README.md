@@ -20,7 +20,7 @@ memory usage: 116.7+ MB
 
     Null_Ratio = Raw_Data.isnull().sum(axis=0).sort_values(ascending=False)/len(Raw_Data)
     Null_Columns = Null_Ratio[Null_Ratio>0.4].index.tolist()
-
+![alt text](https://user-images.githubusercontent.com/28764722/48594396-5c33f600-e91e-11e8-9a3e-eeebf47f86b9.png)
 ### Find columns has skewed data (one group larger than 95000). columns excluded.
 
     Data_Exploration={}
