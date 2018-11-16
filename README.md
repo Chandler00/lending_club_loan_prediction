@@ -258,4 +258,4 @@ memory usage: 116.7+ MB
     svm.fit(X_train.as_matrix(['MORTGAGE', 'OWN', 'RENT', 'grade_fixed', 'revol_util', 'tot_cur_bal',  'emp_length_fixed' ]), y_train)
     test = svm.predict(X_test.as_matrix(['MORTGAGE', 'OWN', 'RENT', 'grade_fixed', 'revol_util', 'tot_cur_bal', 'emp_length_fixed' ]))
     Scores.loc[len(Scores)] = ['svm_all_valurable_combined', accuracy_score(y_test, test), f1_score(y_test, test), recall_score(y_test, test),  precision_score(y_test, test)]
-![alt text] (https://user-images.githubusercontent.com/28764722/48594617-43781000-e91f-11e8-8025-f7f45275f6ea.png)
+![alt text](https://user-images.githubusercontent.com/28764722/48594617-43781000-e91f-11e8-8025-f7f45275f6ea.png)
